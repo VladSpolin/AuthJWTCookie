@@ -5,8 +5,8 @@ namespace AuthJWTCookie.Services.UserAPI.Interfaces
 {
     public interface IUserService
     {
-         Task CreateUser(CreateUserDto userDto);
-         Task<string> Login(LoginUserDto loginUserDto);
+         Task CreateUserAsync(CreateUserDto userDto);
+         Task<string> LoginAsync(LoginUserDto loginUserDto);
          Task<User> GetByEmail(string email);
     }
 }

@@ -29,11 +29,11 @@ namespace AuthJWTCookie.Services.UserAPI.Cryptography
             var token = new JwtSecurityToken(
                 claims:claims,
                 signingCredentials:signingCredentials,
-                expires: DateTime.UtcNow.AddHours(_options.ExpiresHoures));
+                expires: DateTime.UtcNow.AddHours(_options.ExpiresHours));
 
-            var tokenVakue = new JwtSecurityTokenHandler().WriteToken(token);
+            var tokenValue = new JwtSecurityTokenHandler().WriteToken(token);
             
-            return tokenVakue;
+            return tokenValue;
         }
     }
 }

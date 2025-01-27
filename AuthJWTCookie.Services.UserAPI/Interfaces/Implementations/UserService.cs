@@ -21,12 +21,12 @@ namespace AuthJWTCookie.Services.UserAPI.Interfaces.Implementations
             _passwordHasher = passwordHasher;
             _jwtProvider = jwtProvider;
         }
-        public async Task CreateUser(CreateUserDto userDto)
+        public async Task CreateUserAsync(CreateUserDto userDto)
         {
             var user = _mapper.Map<User>(userDto);
             user.PasswordHash = _passwordHasher.Generate(userDto.Password);
             _db.Users.Add(user);
-            _db.SaveChangesAsync();
+            await _db.SaveChangesAsync();
         }
 
         public async Task<User> GetByEmail(string email)
@@ -37,7 +37,7 @@ namespace AuthJWTCookie.Services.UserAPI.Interfaces.Implementations
 
         }
 
-        public async Task<string> Login(LoginUserDto loginUserDto)
+        public async Task<string> LoginAsync(LoginUserDto loginUserDto)
         {
             var user = await GetByEmail(loginUserDto.Email);
             var result = _passwordHasher.Verify(loginUserDto.Password, user.PasswordHash);
