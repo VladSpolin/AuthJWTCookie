@@ -1,0 +1,6 @@
+@AuthJWTCookie.Services.UserAPI_HostAddress = http://localhost:5055
+
+GET {{AuthJWTCookie.Services.UserAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
