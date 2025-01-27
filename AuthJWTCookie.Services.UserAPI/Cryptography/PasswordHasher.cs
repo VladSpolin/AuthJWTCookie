@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using AuthJWTCookie.Services.UserAPI.Cryptography.Interfaces;
+using Microsoft.AspNetCore.Identity;
 
 namespace AuthJWTCookie.Services.UserAPI.Helpers
 {

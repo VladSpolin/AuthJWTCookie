@@ -1,4 +1,4 @@
-﻿namespace AuthJWTCookie.Services.UserAPI.Helpers
+﻿namespace AuthJWTCookie.Services.UserAPI.Cryptography.Interfaces
 {
     public interface IPasswordHasher
     {
